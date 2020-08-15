@@ -2,6 +2,9 @@
 Vuetifyを使ってカレンダーを表示するサンプルコードです
 
 ## Demo
+https://vuetify-calendar-sample.netlify.app/
+
+![image](https://user-images.githubusercontent.com/20487308/90312610-cd17a000-df40-11ea-8027-4a8aa23fcc42.png)
 
 ## Requirement
 
@@ -38,3 +41,7 @@ cd vuetify-calendar-sample
 npm install
 npm run serve
 ```
+
+## References
+
+- https://vuetifyjs.com/en/components/calendars/#calendars
