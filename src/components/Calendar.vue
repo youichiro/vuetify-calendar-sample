@@ -38,7 +38,7 @@ export default {
   }),
   computed: {
     title() {
-      return moment(this.value).format('yyyy年 MM月');
+      return moment(this.value).format('yyyy年 M月');
     },
   },
   methods: {
