@@ -12,6 +12,7 @@
       <v-btn icon @click="$refs.calendar.next()">
         <v-icon>mdi-chevron-right</v-icon>
       </v-btn>
+      <v-toolbar-title>{{ title }}</v-toolbar-title>
     </v-sheet>
     <v-sheet height="94vh">
       <v-calendar
@@ -28,9 +29,26 @@
   export default {
     data: () => ({
       events: [],
+      start: null,
+      end: null,
     }),
+    computed: {
+      title () {
+        if (this.start === null || this.end === null) {
+          return ''
+        }
+        const year = this.start.year
+        const month = this.monthFormatter(this.start)
+        return `${year}年 ${month}`
+      },
+      monthFormatter () {
+        return this.$refs.calendar.getFormatter({
+          timeZone: 'UTC', month: 'long',
+        })
+      },
+    },
     methods: {
-      getEvents () {
+      getEvents ({ start, end }) {
         const events = [
           {
             name: '会議',
@@ -75,6 +93,8 @@
             timed: false,
           },
         ]
+        this.start = start
+        this.end = end
         this.events = events
       },
       getEventColor (event) {
