@@ -58,50 +58,50 @@ export default {
       const events = [
         {
           name: '会議',
-          start: new Date('2020-08-03T10:00:00'), // 開始時刻
-          end: new Date('2020-08-03T11:00:00'), // 終了時刻
+          start: moment('2020-08-03 10:00').toDate(), // 開始時刻
+          end: moment('2020-08-03 11:00').toDate(), // 終了時刻
           color: 'blue',
           timed: true, // 終日ならfalse
         },
         {
           name: '休暇',
-          start: new Date('2020-08-04'),
-          end: new Date('2020-08-04'),
+          start: moment('2020-08-04').toDate(),
+          end: moment('2020-08-04').toDate(),
           color: 'green',
           timed: false,
         },
         {
           name: '出張',
-          start: new Date('2020-08-05'),
-          end: new Date('2020-08-07'),
+          start: moment('2020-08-05').toDate(),
+          end: moment('2020-08-07').toDate(),
           color: 'cyan',
           timed: false,
         },
         {
           name: '飲み会',
-          start: new Date('2020-08-06'),
-          end: new Date('2020-08-06'),
+          start: moment('2020-08-06').toDate(),
+          end: moment('2020-08-06').toDate(),
           color: 'orange',
           timed: false,
         },
         {
           name: '打ち合わせ',
-          start: new Date('2020-08-07T10:00:00'),
-          end: new Date('2020-08-07T11:00:00'),
+          start: moment('2020-08-07 10:00').toDate(),
+          end: moment('2020-08-07 11:00').toDate(),
           color: 'cyan',
-          timed: false,
+          timed: true,
         },
         {
           name: '振り返り',
-          start: new Date('2020-08-07:11:00:00'),
-          end: new Date('2020-08-07T12:00:00'),
+          start: moment('2020-08-07 11:00:00').toDate(),
+          end: moment('2020-08-07 12:00').toDate(),
           color: 'cyan',
-          timed: false,
+          timed: true,
         },
         {
           name: '休暇',
-          start: new Date('2020-09-07'),
-          end: new Date('2020-09-11'),
+          start: moment('2020-09-07').toDate(),
+          end: moment('2020-09-11').toDate(),
           color: 'green',
           timed: false,
         },
