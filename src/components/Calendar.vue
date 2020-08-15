@@ -17,6 +17,7 @@
     <v-sheet height="94vh">
       <v-calendar
         ref="calendar"
+        v-model="value"
         :events="events"
         :event-color="getEventColor"
         @change="getEvents"
@@ -26,29 +27,20 @@
 </template>
 
 <script>
+  import moment from 'moment'
+
   export default {
     data: () => ({
       events: [],
-      start: null,
-      end: null,
+      value: moment().format('yyyy-MM-DD'),
     }),
     computed: {
       title () {
-        if (this.start === null || this.end === null) {
-          return ''
-        }
-        const year = this.start.year
-        const month = this.monthFormatter(this.start)
-        return `${year}年 ${month}`
-      },
-      monthFormatter () {
-        return this.$refs.calendar.getFormatter({
-          timeZone: 'UTC', month: 'long',
-        })
+        return moment(this.value).format('yyyy年 MM月')
       },
     },
     methods: {
-      getEvents ({ start, end }) {
+      getEvents () {
         const events = [
           {
             name: '会議',
@@ -92,9 +84,14 @@
             color: 'cyan',
             timed: false,
           },
+          {
+            name: '休暇',
+            start: new Date('2020-09-07'),
+            end: new Date('2020-09-11'),
+            color: 'green',
+            timed: false,
+          },
         ]
-        this.start = start
-        this.end = end
         this.events = events
       },
       getEventColor (event) {
