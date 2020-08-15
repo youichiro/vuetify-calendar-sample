@@ -6,6 +6,9 @@
       color="grey lighten-3"
       class="d-flex align-center"
     >
+      <v-btn outlined class="ma-4" @click="setToday">
+        今日
+      </v-btn>
       <v-btn icon @click="$refs.calendar.prev()">
         <v-icon>mdi-chevron-left</v-icon>
       </v-btn>
@@ -40,6 +43,9 @@
       },
     },
     methods: {
+      setToday () {
+        this.value = moment().format('yyyy-MM-DD')
+      },
       getEvents () {
         const events = [
           {
