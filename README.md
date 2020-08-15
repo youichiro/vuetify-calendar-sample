@@ -44,4 +44,5 @@ npm run serve
 
 ## References
 
-- https://vuetifyjs.com/en/components/calendars/#calendars
+- [Vuetify#calendar](https://vuetifyjs.com/en/components/calendars/#calendars)
+- [Vuetifyを使ったカレンダーに挑戦](https://qiita.com/marumaruchan/items/6c7dd5afb760fdd3a2ca)
