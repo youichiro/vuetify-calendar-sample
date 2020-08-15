@@ -20,9 +20,12 @@
         :events="events"
         :event-color="getEventColor"
         locale="ja-jp"
-        :day-format="timestamp => new Date(timestamp.date).getDate()"
-        :month-format="timestamp => (new Date(timestamp.date).getMonth() + 1) + ' /'"
+        :day-format="(timestamp) => new Date(timestamp.date).getDate()"
+        :month-format="(timestamp) => new Date(timestamp.date).getMonth() + 1 + ' /'"
         @change="getEvents"
+        @click:event="showEvent"
+        @click:more="viewDay"
+        @click:date="viewDay"
       ></v-calendar>
     </v-sheet>
   </div>
@@ -44,6 +47,12 @@ export default {
   methods: {
     setToday() {
       this.value = moment().format('yyyy-MM-DD');
+    },
+    showEvent({ event }) {
+      alert(`clicked ${event.name}`);
+    },
+    viewDay({ date }) {
+      alert(`date: ${date}`);
     },
     getEvents() {
       const events = [
