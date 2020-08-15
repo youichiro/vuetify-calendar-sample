@@ -19,6 +19,9 @@
         type="month"
         :events="events"
         :event-color="getEventColor"
+        locale="ja-jp"
+        :day-format="timestamp => new Date(timestamp.date).getDate()"
+        :month-format="timestamp => (new Date(timestamp.date).getMonth() + 1) + ' /'"
         @change="getEvents"
       ></v-calendar>
     </v-sheet>
