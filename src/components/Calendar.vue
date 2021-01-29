@@ -37,7 +37,7 @@ import moment from 'moment';
 export default {
   data: () => ({
     events: [],
-    value: moment().format('yyyy-MM-DD'),
+    value: moment('2020-08-01').format('yyyy-MM-DD'),  // デフォルトを2020年8月に設定
   }),
   computed: {
     title() {
